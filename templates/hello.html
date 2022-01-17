@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+</head>
+<body>
+<h1>Привітання користувача</h1>
+<form action="{{ url_for('hello_name') }}" method="post">
+    <label>
+        <input type="text" name="name" placeholder="Введіть ваше ім'я" required>
+    </label>
+    <button>Привітатись</button>
+</form>
+</body>
+</html>
