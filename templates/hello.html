@@ -11,7 +11,12 @@
         <input type="text" name="name" placeholder="Введіть ваше ім'я" required>
     </label>
     <button>Привітатись</button>
-    <button>Список усіх, з ким уже привіталися</button>
+</form>
+<form action="{{ url_for('username') }}" method="post">
+    <label>
+        <button>Список усіх, з ким уже привіталися</button>
+    </label>
+
 </form>
 </body>
 </html>
