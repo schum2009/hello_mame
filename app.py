@@ -4,12 +4,12 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 
-@app.route('/', method=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def hello():
     return render_template('hello.html')
 
 
-@app.route('/hello_name', method=['POST'])
+@app.route('/hello_name', methods=['POST'])
 def hello_name():
     name = request.form.get('name')
     return render_template('hello_name.html', name=name)
