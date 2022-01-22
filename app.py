@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
-user_name = []
+user_names = []
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -13,17 +13,17 @@ def hello():
 def hello_name():
     name = request.form.get('name')
 
-    if name in user_name:
+    if name in user_names:
         return render_template('seen_you_before.html', name=name)
 
     else:
-        user_name.append(name)
+        user_names.append(name)
         return render_template('hello_name.html', name=name)
 
 
-@app.route('/username', methods=['POST'])
-def username():
-    return render_template('username.html')
+@app.route('/usernames', methods=['POST'])
+def usernames():
+    return render_template('usernames.html', my_string='Список усіх, з ким уже привіталися', my_list=user_names)
 
 
 if __name__ == '__main__':
