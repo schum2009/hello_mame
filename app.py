@@ -23,7 +23,7 @@ def hello_name():
 
 @app.route('/usernames', methods=['POST'])
 def usernames():
-    return render_template('usernames.html', my_string='Список усіх, з ким уже привіталися', my_list=user_names)
+    return render_template('usernames.html', my_list=user_names)
 
 
 if __name__ == '__main__':
