@@ -13,11 +13,11 @@ def hello():
 def hello_name():
     name = request.form.get('name')
 
-    if 'name' in user_name:
+    if name in user_name:
         return render_template('seen_you_before.html', name=name)
 
     else:
-        user_name.append('name')
+        user_name.append(name)
         return render_template('hello_name.html', name=name)
 
 
