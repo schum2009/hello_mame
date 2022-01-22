@@ -12,12 +12,13 @@ def hello():
 @app.route('/hello_name', methods=['POST'])
 def hello_name():
     name = request.form.get('name')
-    user_name.append('name')
 
     if name in user_name:
         return render_template('seen_you_before.html', name=name)
 
+
     else:
+        user_name.append('name')
         return render_template('hello_name.html', name=name)
 
 
